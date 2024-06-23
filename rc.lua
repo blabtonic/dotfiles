@@ -27,6 +27,7 @@ logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu"
 
 -- Volume Control
 volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 
 keys = require('keys')
 help = require('help')
@@ -139,6 +140,15 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock("<span>%l:%M %p</span>", 1)
+
+-- calendar opens on textclock click
+cw = calendar_widget({
+    start_sunday = true
+})
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -290,7 +300,7 @@ globalkeys = gears.table.join(
         { description = "raise volume", group = "system" }
     ),
     awful.key({}, "XF86AudioMute",
-        function ()
+        function()
             awful.spawn("amixer -D pulse sset Master toggle", false)
         end,
         { description = "mute volume", group = "system" }
@@ -486,6 +496,9 @@ clientbuttons = gears.table.join(
         awful.mouse.client.resize(c)
     end)
 )
+
+awful.spawn.with_shell('redshift -x && redshift -O 4000K')
+awful.spawn.with_shell('caffeine-indicator')
 
 -- Set keys
 root.keys(globalkeys)
