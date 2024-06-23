@@ -24,15 +24,15 @@ theme.bg2 = '#1b1b1b'
 theme.bg3 = '#222222'
 
 theme.fg_focus = theme.fg
-theme.fg_normal = theme.fg.."40"
+theme.fg_normal = theme.fg
 theme.fg_minimize = theme.fg2
 theme.fg_maximize = theme.fg3
 
 theme.bg_normal = theme.bg2
-theme.bg_urgent = theme.err.."40"
-theme.bg_minimize = theme.fg.."10"
-theme.bg_maximize = theme.fg3.."5"
-theme.bg_focus = theme.fg2.."cc"
+theme.bg_urgent = theme.err
+theme.bg_minimize = theme.fg
+theme.bg_maximize = theme.fg3
+theme.bg_focus = theme.fg2
 
 theme.useless_gap = dpi(5)
 theme.snap_bg = theme.fg2
@@ -40,7 +40,7 @@ theme.snap_bg = theme.fg2
 theme.border_width = dpi(5)
 theme.border_color = theme.bg
 
-theme.titlebar_fg = theme.fg.."40"
+theme.titlebar_fg = theme.fg
 theme.titlebar_fg_normal = theme.fg2
 theme.titlebar_fg_focus = theme.fg
 theme.titlebar_bg = theme.bg
