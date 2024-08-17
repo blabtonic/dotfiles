@@ -501,6 +501,7 @@ local long_command = "xrandr --output DP-0 --off --output DP-1 --off --output DP
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
 awful.spawn.with_shell('caffeine-indicator')
 awful.spawn.with_shell(long_command)
+awful.spawn.with_shell("nm-applet")
 
 -- Set keys
 root.keys(globalkeys)
