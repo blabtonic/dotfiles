@@ -497,7 +497,8 @@ clientbuttons = gears.table.join(
     end)
 )
 
-local long_command = "xrandr --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output HDMI-0 --mode 1600x900 --pos 0x0 --rotate normal --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 1600x0 --rotate normal"
+local long_command =
+"xrandr --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output HDMI-0 --mode 1600x900 --pos 0x0 --rotate normal --output DP-4 --off --output DP-5 --mode 1920x1080 --pos 1600x0 --rotate normal"
 awful.spawn.with_shell('redshift -x && redshift -O 4000K')
 awful.spawn.with_shell('caffeine-indicator')
 awful.spawn.with_shell(long_command)
@@ -603,7 +604,7 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
     awful.titlebar(c, {
-        size = 32,
+        size = 25,
     }):setup {
         {
             {     -- Left
