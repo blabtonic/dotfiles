@@ -139,7 +139,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("<span>%l:%M %p</span>", 1)
+mytextclock = wibox.widget.textclock("<span>%l:%M %p </span>", 1)
 
 -- calendar opens on textclock click
 cw = calendar_widget({
